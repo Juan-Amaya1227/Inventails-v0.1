@@ -1,0 +1,17 @@
+# Ignora las carpetas de build de NetBeans
+build
+dist
+nbproject
+private
+
+# Ignora los archivos compilados de Java (.class)
+.class
+
+# Ignora archivos de configuración del IDE
+.idea
+.iml
+.ipr
+.iws
+
+# Ignora archivos de log
+.log
