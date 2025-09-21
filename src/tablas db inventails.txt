@@ -1,0 +1,101 @@
+
+ CREATE TABLE compras (
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    f_compra TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    v_compra DECIMAL(10, 2) NOT NULL,
+    Peso_inicial_kg DECIMAL(10, 2) NOT NULL,
+    ID_animal int(10),
+    FOREIGN KEY (ID_animal) REFERENCES animales(ID)
+    );
+
+CREATE TABLE ventas (
+    
+    f_venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    v_venta DECIMAL(10, 2) NOT NULL,
+    Peso_final_kg DECIMAL(10, 2) NOT NULL,
+    ID_animal int(10),
+    FOREIGN KEY (ID_animal) REFERENCES animales(ID)
+    );
+
+Create table saldo(
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    saldo DECIMAL(10, 2) NOT NULL
+); 
+
+11 - 2022  -16
+10 - 2021  -15
+09 - 2020  -14
+08 - 2019  -13
+07 - 2018  -12
+06 - 2017  -11
+05 - 2016  -10
+04 - 2015  -09
+03 - 2014  -08
+02 - 2013  -07
+01 - 2012  -06 
+00 - 2011  -05
+
+CREATE TABLE Defunciones (
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    f_defuncion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    r_defuncion VARCHAR(50),
+    ID_animal int(10),
+    FOREIGN KEY (ID_animal) REFERENCES animales(ID)
+);
+
+CREATE TABLE Pedigree (
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    RazaAnimal VARCHAR(50),
+    PropositoAnimal VARCHAR(50),
+    RazaPadre VARCHAR(50),
+    RazaMadre VARCHAR(50),
+    ID_animal int(10),
+    FOREIGN KEY (ID_animal) REFERENCES animales(ID)
+);
+
+CREATE TABLE MedicinasAplicadas (
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    ID_animal int(10),
+    MedicamentoAplicado VARCHAR(100),
+    ViaAplicacion VARCHAR(50),
+    Concentracion VARCHAR(50),
+    FechaAplicacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    FOREIGN KEY (ID_animal) REFERENCES animales(ID)
+);
+
+CREATE TABLE RegistroEnfermedades(
+     id INT(10) AUTO_INCREMENT PRIMARY KEY,
+     F_Diagnostico TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+     enfermedad varchar(50) NOT NULL,
+     veterinario varchar(30) NOT NULL,
+     comentario varchar(50),
+     ID_animal int(10),
+     FOREIGN KEY (ID_animal) REFERENCES animales(ID)  
+);
+
+CREATE TABLE transacciones (
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    TIPO_TRANSACCION varchar(20),
+    id_compra INT(10),
+    id_venta INT(10),
+    id_GastoMantenimiento INT(10),
+    FOREIGN KEY (id_compra) REFERENCES compras(ID),
+    FOREIGN KEY (id_venta) REFERENCES ventas(ID),
+    FOREIGN KEY (id_GastoMantenimiento) REFERENCES GastosMantenimiento(ID)
+);
+
+CREATE TABLE GastosMantenimiento (
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    RazondeGasto VARCHAR(50),
+    ValorGasto DECIMAL(10, 2) NOT NULL,
+    FechaGasto TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+);
+
+CREATE TABLE Animales (
+    id INT(10) AUTO_INCREMENT PRIMARY KEY,
+    codigo VARCHAR(10),
+    tipo_animal VARCHAR(20),
+    Genero VARCHAR(10),
+    ubicacion VARCHAR(30),
+    estado VARCHAR(50)
+);
