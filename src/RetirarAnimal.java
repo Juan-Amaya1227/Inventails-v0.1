@@ -13,11 +13,11 @@ import java.util.Stack;
 public class RetirarAnimal {
     
     // Pilas para manejar la  venta
-    private  final Stack<Object[]> pilaVentaBovinos ;
-    private  final Stack<Object[]> pilaVentaGallinas ;
-    private  final Stack<Object[]> pilaVentaCerdos ;
-    private  final Stack<Object[]> pilaVentaCaballos ;
-    private  final Stack<Object[]> pilaVentaCaprinos ;
+    final Stack<Object[]> pilaVentaBovinos ;
+    final Stack<Object[]> pilaVentaGallinas ;
+    final Stack<Object[]> pilaVentaCerdos ;
+    final Stack<Object[]> pilaVentaCaballos ;
+    final Stack<Object[]> pilaVentaCaprinos ;
 
     //registros
     public final Map<String, Ventana> registrosBovinos;
@@ -32,7 +32,7 @@ public class RetirarAnimal {
     public  String password = "";
     public  String tipa;
     public final Connection cx;
-    private final int IDUsuario;
+    final int IDUsuario;
     
     public RetirarAnimal(int IDUsuario,Stack<Object[]> pilaVentaCaprinos,Stack<Object[]> pilaVentaBovinos,Stack<Object[]> pilaVentaGallinas,
                          Stack<Object[]> pilaVentaCerdos, Stack<Object[]> pilaVentaCaballos,

@@ -40,12 +40,7 @@ public class ComprarAnimal {
     
     private int IDUsuario;
 
-    public ComprarAnimal(int IDUsuario,Queue<Object[]> colaCompraCaprinos,Queue<Object[]> colaCompraBovinos, Queue<Object[]> colaCompraGallinas ,
-                         Queue<Object[]> colaCompraCerdos,  Queue<Object[]> colaCompraCaballos,
-                         Map<String, Ventana> registrosCaprinos,Map<String, Ventana> registrosBovinos, Map<String, Ventana> registrosGallinas, 
-                         Map<String, Ventana> registrosCerdos,  Map<String, Ventana> registrosCaballos, 
-                     String url, String db, String user, String password, 
-                     String sitio, String tipa, Connection cx) {
+    public ComprarAnimal(int IDUsuario, Queue<Object[]> colaCompraCaprinos, Queue<Object[]> colaCompraBovinos, Queue<Object[]> colaCompraGallinas, Queue<Object[]> colaCompraCerdos, Queue<Object[]> colaCompraCaballos, Map<String, Ventana> registrosCaprinos, Map<String, Ventana> registrosBovinos, Map<String, Ventana> registrosGallinas, Map<String, Ventana> registrosCerdos, Map<String, Ventana> registrosCaballos, String url, String db, String user, String password, String sitio, String tipa, Connection cx) {
         
         this.tipa = tipa;
         this.cx = cx;

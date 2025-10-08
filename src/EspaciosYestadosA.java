@@ -91,7 +91,7 @@ public class EspaciosYestadosA {
             }
         }
      
-     private Object[][] rsToArray(ResultSet rs, int columnCount) throws SQLException {
+     Object[][] rsToArray(ResultSet rs, int columnCount) throws SQLException {
         rs.last(); // se movera a la ultima fila para contar cuántas columnas hay
         int rowCount = rs.getRow();
         rs.beforeFirst(); // vuelve al inicio del ResultSet

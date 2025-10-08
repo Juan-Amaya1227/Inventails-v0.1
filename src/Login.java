@@ -777,7 +777,7 @@ public class Login extends JFrame {
                 NivelAcceso = rs.getInt("nivelPermiso");
                 boolean acceso = false;
                 while(!acceso){
-                if("3".equals(NivelAcceso)){
+                if(NivelAcceso == 3){
                    JOptionPane.showMessageDialog(null,"Tu cuenta ha sido bloqueada, contacta al administrador si crees que se trata de un error","Bloqueo",JOptionPane.ERROR_MESSAGE);
                    LimpiarLogin();
                    return;

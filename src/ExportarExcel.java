@@ -12,12 +12,12 @@ import javax.swing.JPanel;
 
 public class ExportarExcel {
 
-    private final String url;
-    private final String user;
-    private final String password;
-    private final String db;
-    private String tiporeporte;
-    private final int IDUsuario;
+    final String url;
+    final String user;
+    final String password;
+    final String db;
+    String tiporeporte;
+    final int IDUsuario;
     public final Connection cx;
     public String desktopPath = System.getProperty("user.home") + "/Desktop";
 
@@ -80,7 +80,7 @@ public class ExportarExcel {
 
     }
     
-    private void AuditoriaGeneracionReporte()throws SQLException{
+    void AuditoriaGeneracionReporte()throws SQLException{
     LocalDateTime FechaDescargaReporte = LocalDateTime.now();
     // Consulta SQL correcta con marcadores de parámetros
             String sql = "INSERT INTO DescargaReportes(Responsable, ReporteDescargado, FechaDescarga)"+

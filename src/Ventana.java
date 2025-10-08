@@ -174,7 +174,7 @@ public class Ventana extends JFrame {
             catch (SQLException ex) {Logger.getLogger(Ventana.class.getName()).log(Level.SEVERE, null, ex);}
             });
         
-        buttonCsv.addActionListener(e -> { if(!"1".equals(NivelAcceso)){//ya bloquea si no cuenta con el permiso hace falta completar los reportes
+        buttonCsv.addActionListener(e -> { if(NivelAcceso != 1){//ya bloquea si no cuenta con el permiso hace falta completar los reportes
                                            JOptionPane.showMessageDialog(null,"Actualmente no se encuentra autorizado para llevar a cabo esta accion","Error",JOptionPane.WARNING_MESSAGE);
                                               }
         else{ExportarExcel exportar = new ExportarExcel(url,db,user,password,IDUsuario,cx);
@@ -261,8 +261,7 @@ public class Ventana extends JFrame {
         // Obtener la referencia al login original
         Window[] windows = Window.getWindows();
         for (Window window : windows) {
-            if (window instanceof Login) {
-                Login login = (Login) window;
+            if (window instanceof Login login) {
                 login.LimpiarLogin(); // Restablece al estado inicial
                 login.setVisible(true); // Muestra el login
                 break;
